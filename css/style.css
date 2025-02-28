@@ -312,7 +312,7 @@ footer {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-1px) scale(1.05);
+  transform: translateY(-1px) scale(.95);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .mark1 p {
@@ -828,7 +828,6 @@ label {
     width: 18vw;
     margin-top: 10px;
   }
-
   .cards {
     margin: auto;
     display: flex;
@@ -840,7 +839,7 @@ label {
     box-shadow: #959da533 0px 8px 24px;
     width: 25%;
     height: 0px;
-    border-radius: 10px;
+    border-radius: 50%;
     overflow: hidden;
   }
   .card img {
@@ -936,7 +935,7 @@ hr {
   margin: auto;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.4vw;
+  gap: 1.7vw;
   padding: 20px 0;
 }
 .card {
@@ -950,6 +949,10 @@ hr {
   width: 100%;
   height: 180px;
   object-fit: cover;
+}
+.card:hover {
+  transform: translateY(-1px) scale(.95);
+  box-shadow: 0 8px 16px rgba(177, 8, 8, 0.2);
 }
 .card-sum {
   padding: 15px;
