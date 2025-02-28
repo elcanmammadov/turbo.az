@@ -67,7 +67,7 @@
                             <p onclick="favorite()" style="margin-right: 5px;">Seçilmişlər</p>
                         </span>
                         <div class="user df">
-                            <i class="fa-solid fa-user" style="color: #888; margin-top: 1.5px;"></i>
+                            <i class="fa-solid fa-user" style="color: #888; margin-top: 1.5px; font-size: 16px;"></i>
                             <p onclick="login()">Giriş</p>
                         </div>
                     </div>
@@ -81,22 +81,20 @@
                         </div>
                         <ul>
                             <li><a href="">Bütün Elanlar</a></li>
-                            <li><a href="">Avtosalonlar</a></li>
-                            <li><a href="">İcarə
-                            </a></li>
-                            <!-- <li><a href="">Moto</a></li> -->
-                            <!-- <li id="drp"><a href="">Ehtiyat hissələri və aksesuarlar</a> -->
+                            <li><a href="">Dilerler</a></li>
+                            <li><a href="">Avtokataloq</a></li>
+                            <li><a href="">Moto</a></li>  
+                            <li><a href="">İcarə</a></li>
                         </ul>
                     </div>
                     <div class="buttom-right">
-                        <input type="text" style="padding: 9px; border-radius: 10px; border: none; margin-right: 10px;" id="searchInput" placeholder="Modeli axtarın...">
-                        <button style="margin-right: 5px;" onclick="yeniElan()"><span>✚</span>Yeni elan</button>
-                        <i class="fa-solid fa-basket-shopping" style="color: #fff; font-size: 1.3rem; margin-left: 10px;"></i>
+                        <input type="text" style="padding: 11px; border-radius: 10px; border: none; font-size: 11px" id="searchInput" placeholder="Modeli axtarın... ">
+                        <button style="margin-left: 15px; font-size: 12px;" onclick="yeniElan()"><span>✚</span>Yeni elan</button>
                     </div>
                 </div>
             </div>
         </nav>
-             
+   
         <div class="main-search">
             <div class="container">
                 <div class="inp-top">
@@ -111,7 +109,7 @@
                         <button>Yeni</button>
                         <button>Sürülmüş</button>
                     </div>
-                    <select name="" id="seher">
+                    <select name="" id="city">
                         <option value="" disabled selected hidden>Şəhər</option>
                     </select>
                 </div>
@@ -122,14 +120,23 @@
                     </div>
                     <div class="vlt-group df">
                         <select id="valyuta">
-                            <option value="">AZN</option>
+                            <option value="" disabled selected hidden>AZN</option>
+                            <option value="">USD</option>
+                            <option value="">EUR</option>
                         </select>
                         <button onclick="bgRed(this) , kreditBarter('kredit')" id="kredit">Kredit</button>
                         <button onclick="bgRed(this) , kreditBarter('barter')" id="barter">Barter</button>
                     </div>
                     <select id="ban">
                         <option value="" disabled selected hidden>Ban növü</option>
+                        <option value="sedan">Sedan</option>
+                        <option value="hatchback">Hatchback</option>
+                        <option value="coupe">Coupe</option>
+                        <option value="suv">SUV</option>
+                        <option value="pickup">Pickup</option>
+                        <option value="convertible">Convertible</option>
                     </select>
+                    
                     <div class="slc-group df">
                         <select id="il-min">
                             <option value="" disabled selected hidden>İl, min.</option>
@@ -139,17 +146,89 @@
                         </select>
                     </div>
                 </div>
-    </header>
+
+ <div id="yenielan" style="display: none;">
+    <div class="container">
+        <h3 style="margin-top: 10px; margin-left: 5px;">ELAN YERLƏŞDİRMƏK</h3>
+        <ul style="margin-left: 10px;">
+            <li>Üç ay ərzində bir nəqliyyat vasitəsi yalnız bir dəfə pulsuz dərc oluna bilər.</li>
+            <li>Üç ay ərzində təkrar və ya oxşar elanlar (marka/model, rəng) ödənişlidir.</li>
+            <li>Elanınızı saytın ön sıralarında görmək üçün "İrəli çək" xidmətindən istifadə edin.</li>
+        </ul>
+        
+        <form>
+            <div class="product">
+                <div class="pr-inside">
+                    <label>Marka <span>*</span></label>
+                    <select id="marka">
+                        <option value="">Seçin</option>
+                    </select>
+                </div>
+                <div class="pr-inside">
+                    <label>Yanacaq növü <span>*</span></label>
+                    <select id="yanacaq">
+                        <option value=""></option>      
+                    </select>
+                </div>
+            </div>
+            <div class="product">
+                <div class="pr-inside">
+                    <label>Model <span>*</span></label>
+                    <select id="model">
+                        <option value="">Seçin</option>
+                    </select>
+                </div>
+                <div class="pr-inside">
+                    <label>Ötürücü <span>*</span></label>
+                    <select id="oturucu">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+            <div class="product">
+                <div class="pr-inside">
+                    <label>Ban növü <span>*</span></label>
+                    <select id="ban">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="pr-inside">
+                    <label>Sürətlər qutusu <span>*</span></label>
+                    <select id="">
+                        <option value=""></option>
+                    </select>
+                </div>
+            </div>
+          </label>
+        </form>
+    </div>
+</div>     
+</header>
     
     <main id="desk-main">
         <div class="container">
-            <h4>PREMİUM ELANLAR</h4>
+            <h4 style="margin-left: 10px;">PREMİUM ELANLAR</h4>
         </div>
         <div class="cards container">
         </div>
 
+        <footer>
+            <div class="all-secs">
+                <div id="sec1">
+                    <a href="">Qaydalar</a>
+                    <a href="">İstifadəçi razılaşması</a>
+                    <a href="">Reklam Yerləşdirin</a>
+                    <a href="">Sifarişli avtomobil alan alıcı üçün tövsiyyələr</a>
+                </div>
+                <div id="sec2" style="margin-left: 6px;">
+                    <p>Dəstək xidməti</p>
+                    <p id="number">(012) 526-47-47</p>
+                    <span>İş saatları — Həftə içi: 09:00-19:00 | Şənbə: 09:00-13:00</span>
+            </div>
+        </footer>
+
         <script>
-            const hiddeninp = document.querySelector(".hidden-inp");
+const hiddeninp = document.querySelector(".hidden-inp");
 const yenielan = document.querySelector(".yenielan");
 const nav = document.querySelector("nav");
 const mainsearch = document.querySelector(".main-search");
@@ -166,8 +245,6 @@ const loginn = document.querySelector(".login");
 const secilmismain = document.querySelector(".secilmis-main");
 const marka = document.querySelector("#marka");
 const model = document.querySelector("#model");
-const seher = document.querySelector("#seher");
-const valyuta = document.querySelector("#valyuta");
 const ban = document.querySelector("#ban");
 const ilMax = document.querySelector("#il-max");
 const ilMin = document.querySelector("#il-min");
@@ -186,6 +263,8 @@ const yardim = document.querySelector('.yardim');
 const dahaCox = document.querySelector('#daha-cox');
 const mobilnav = document.querySelector('#mobile-nav');
 const searchMark = document.querySelector('#searchMark');
+const city = document.querySelector("#city");
+
 const likedCars = [];
 let data = {
         "cars": [
@@ -194,12 +273,14 @@ let data = {
             "brand": "Mercedes",
             "model": "w202",
             "price": "10 500",
-            "currency": "AZN",
+            "currency": "AZN", 
             "year": 1998,
             "images": [
             'https://turbo.azstatic.com/uploads/full/2022%2F02%2F07%2F16%2F20%2F36%2F05ae3ec7-b845-4458-8033-99eec8aec1a2%2F83217_ryHX2Q7AONB3-jC_sEJ3mQ.jpg'
             ],
-            "engine": "2.0"
+            "engine": "2.0",
+            "city": "Bakı",
+            "ban": "Sedan"
           },
           {
             "id": "2",
@@ -208,12 +289,11 @@ let data = {
             "price": "21 000",
             "currency": "AZN",
             "year": 2014,
-            "credit": true,
-            "barter": true,
             "images": [
               'https://turbo.azstatic.com/uploads/full/2021%2F09%2F10%2F11%2F40%2F18%2Fbe262b8b-13ff-40ee-9664-4c7c4ea93e4b%2F94552_bf7HpneCobaNn8ooAalBwg.jpg'
             ],
-            "engine": 1.4
+            "engine": 1.4,
+            "city": "Ganja",
           },
           {
             "id": "3",
@@ -225,7 +305,8 @@ let data = {
             "images": [
               'https://turbo.azstatic.com/uploads/f660x496/2020%2F02%2F08%2F12%2F31%2F23%2Fdfd4bcdd-5279-4807-85cb-58aa153c900f%2F44290_Il5UqH7nhzVTrAAfdt5BuQ.jpg' 
             ],
-            "engine": "2.0"
+            "engine": "2.0",
+            "city": "Shamkir",
           },
           {
             "id": "4",
@@ -237,7 +318,8 @@ let data = {
             "images": [
              'https://turbo.azstatic.com/uploads/full/2022%2F09%2F29%2F04%2F48%2F26%2Ff85c3fb0-4f77-4157-8b15-a3122bbaf36d%2F15612_S_xRbeuG6jQhZhkc_JM3wg.jpg'
             ],
-            "engine": 1.6
+            "engine": 1.6,
+            "city": "Gabala", 
           },
           {
             "id": "5",
@@ -249,7 +331,8 @@ let data = {
             "images": [
              'https://turbo.azstatic.com/uploads/full/2020%2F08%2F15%2F17%2F42%2F55%2F5e61d0d8-ac41-42d4-8a34-33f9c563bba8%2F4747_ZOpsrcdSRl_mByG6tDsiqQ.jpg'
             ],
-            "engine": 4.4
+            "engine": 4.4,
+            "city": "Xachmaz",
           },
           {
             "id": "6",
@@ -261,7 +344,8 @@ let data = {
             "images": [
                 'https://turbo.azstatic.com/uploads/full/2021%2F12%2F09%2F01%2F51%2F22%2F2e3d6e19-baa7-4625-89e0-d358238808ce%2F21872_z_Z4BhoRifgwGf0Fz_hvJw.jpg' 
             ],
-            "engine": 2.9
+            "engine": 2.9,
+            "city": "Quba",
           },
           {
             "id": "7",
@@ -273,7 +357,8 @@ let data = {
             "images": [
              'https://turbo.azstatic.com/uploads/full/2021%2F06%2F18%2F16%2F16%2F02%2Fd4a556f8-adc6-4ff8-897b-2079ea777987%2F24971_KEan9mcELSSmUAPbxG1KEw.jpg' 
             ],
-            "engine": 2.0
+            "engine": 2.0,
+            "city": "Qusar",
           },
           {
             "id": "8",
@@ -285,9 +370,118 @@ let data = {
             "images": [
              'https://turbo.azstatic.com/uploads/full/2020%2F08%2F13%2F13%2F32%2F55%2F012a26df-efae-4cf0-b763-a4c3de17ae23%2F46349_cqQK5HyMFGcJOEMh1pCm1A.jpg'
             ],
-            "engine": 4.4
-          }
-        ]
+            "engine": 4.4,
+            "city": "Qazaxh",
+
+          },
+
+          {
+    "id": "9",
+    "brand": "Tesla",
+    "model": "Model S",
+    "price": "130 000",
+    "currency": "AZN",
+    "year": 2023,
+    "images": [
+   "https://turbo.azstatic.com/uploads/f660x496/2024%2F08%2F31%2F14%2F12%2F32%2F6055b3c0-e67a-46ef-ae8e-34ba645df736%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"
+   
+    ],
+    "engine": "Electric",
+    "city": "Baku"
+  },
+  {
+    "id": "10",
+    "brand": "Jaguar",
+    "model": "F-Type",
+    "price": "120 000",
+    "currency": "AZN",
+    "year": 2022,
+    "images": [
+      "https://turbo.azstatic.com/uploads/f660x496/2024%2F09%2F11%2F23%2F37%2F10%2F15b636b2-5b6d-4bcd-8db7-21e84b86c10c%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"
+    ],
+    "engine": 3.0,
+    "city": "Lankaran"
+  },
+  {
+    "id": "11",
+    "brand": "Ford",
+    "model": "Mustang",
+    "price": "85 000",
+    "currency": "AZN",
+    "year": 2021,
+    "images": [
+      "data:image/jpeg;base64,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"
+    ],
+    "engine": 5.0,
+    "city": "Sheki"
+  },
+  {
+    "id": "12",
+    "brand": "Chevrolet",
+    "model": "Corvette",
+    "price": "95 000",
+    "currency": "AZN",
+    "year": 2020,
+    "images": [
+      "https://turbo.azstatic.com/uploads/full/2024%2F08%2F23%2F22%2F21%2F48%2F08d8c5d4-b28f-4214-8a98-d05820a80d8a%2F11375_qXr7-N1ppBcS2a5TEaxWRQ.jpg"
+    ],
+    "engine": 6.2,
+    "city": "Mingachevir"
+  },
+  {
+    "id": "13",
+    "brand": "BMW",
+    "model": "X5",
+    "price": "115 000",
+    "currency": "AZN",
+    "year": 2023,
+    "images": [
+      "https://turbo.azstatic.com/uploads/full/2024%2F05%2F23%2F23%2F08%2F53%2F01732a98-dcef-4f36-a112-d12c4dcc341f%2F12183_ogtQftp0VNM0b8HrfrDIcQ.jpg"
+    ],
+    "engine": 3.0,
+    "city": "Ganja"
+  },
+  {
+    "id": "14",
+    "brand": "Audi",
+    "model": "Q7",
+    "price": "135 000",
+    "currency": "AZN",
+    "year": 2022,
+    "images": [
+      "https://turbo.azstatic.com/uploads/f660x496/2022%2F11%2F02%2F18%2F16%2F01%2Fb3a1e4b3-e8ab-401b-bb31-9a1625d830bd%2F99543_d-3Y9tLMV_ZscgmPOUHhTA.jpg"
+    ],
+    "engine": 3.0,
+    "city": "Baku"
+  },
+  {
+    "id": "15",
+    "brand": "Mercedes-Benz",
+    "model": "GLE",
+    "price": "140 000",
+    "currency": "AZN",
+    "year": 2023,
+    "images": [
+      "https://turbo.azstatic.com/uploads/f660x496/2023%2F08%2F05%2F17%2F12%2F33%2F218aa1cf-0d79-4d30-86e0-d8736a31980c%2F35463_MrozYiVEW2sevP4b5_LTHA.jpg"
+    ],
+    "engine": 3.0,
+    "city": "Sumqayit"
+  },
+  {
+    "id": "16",
+    "brand": "Porsche",
+    "model": "Macan",
+    "price": "110 000",
+    "currency": "AZN",
+    "year": 2022,
+    "images": [
+      "https://turbo.azstatic.com/uploads/f660x496/2024%2F03%2F31%2F14%2F58%2F21%2F73535693-ccac-4c9c-a5f3-e26dab86e3f3%2F32444_OikwS_ZIYofkU92pw8zouQ.jpg"
+    ],
+    "engine": 2.9,
+    "city": "Baku"
+  }
+]
+
       }
 
 //selectlere yigilanlar
@@ -300,6 +494,7 @@ getOptions([...new Set(data.cars.map(item => item.currency))], valyuta);
 getOptions([...new Set(data.cars.map(item => item.year))], ilMax);
 getOptions([...new Set(data.cars.map(item => item.year))], ilMin);
 getOptions([...new Set(data.cars.map(item => item.year))], ilMin);
+getOptions([...new Set(data.cars.map(item => item.city))], city);
 
 function showCard() {
     let kod = '';
@@ -307,11 +502,25 @@ function showCard() {
         .filter(item => 
             item.brand.includes(marka.value) && 
             item.model.includes(model.value) && 
-            item.city !== seher.value &&
+            item.city !== city.value &&
            
             item.currency.includes(valyuta.value) &&
             (ilMax.value >= item.year || ilMin.value <= item.year ) &&
             (+qiymetMax.value >= item.price ) || (+qiymetMin.value <= item.price ) 
+        )
+        .forEach(item => {
+            function showCard() {
+    let kod = '';
+    data.cars
+        .filter(item => 
+            (!marka.value || item.brand.includes(marka.value)) &&
+            (!model.value || item.model.includes(model.value)) &&
+            (!city.value || item.city.includes(city.value)) &&
+            (!valyuta.value || item.currency.includes(valyuta.value)) &&
+            (!ilMax.value || item.year <= ilMax.value) &&
+            (!ilMin.value || item.year >= ilMin.value) &&
+            (!qiymetMax.value || +item.price <= +qiymetMax.value) &&
+            (!qiymetMin.value || +item.price >= +qiymetMin.value)
         )
         .forEach(item => {
             kod += ` 
@@ -325,16 +534,22 @@ function showCard() {
                         </span>
                     </div>
                     <div class="card-sum">
-                        <h3>${item. price} ${item.currency}</h3>
+                        <h3>${item.price} ${item.currency}</h3>
                         <p>${item.brand} ${item.model}</p>
-                        <p>${item.year}, ${item.engine}L, ${item.color}</p>
+                        <p>${item.year}, ${item.engine}L, ${item.city}</p>
                     </div>
                 </div>`;
+        });
+
+        city.addEventListener("change", showCard);
+
+    cards.innerHTML = kod;
+}
+
         });
     cards.innerHTML = kod;
 }
 showCard(); 
-
 
 // filterleme
 function like(element, id) {
@@ -426,6 +641,17 @@ function showFilteredCars(filteredCars) {
     });
 
     document.querySelector(".cards").innerHTML = kod;
+}
+
+
+let flag = false;
+
+// Yeni Elan bölməsini göstərmək və gizlətmək üçün funksiya
+function yeniElan() {
+    flag = !flag;
+    document.getElementById("yenielan").style.display = flag ? "block" : "none"; 
+    document.getElementById("main").style.display = flag ? "none" : "block"; 
+    document.getElementById("mainsearch").style.display = flag ? "none" : "block";
 }
 
   </script>
